@@ -1,0 +1,174 @@
+<div class="dashboard">
+  <div class="page-content">
+    <div class="row stats-row">
+      <div class="col">
+        <div class="stats-card">
+          <div class="content">
+            <div class="description">Avaliações feitas no período</div>
+            <div class="title-container">
+              <h2 class="title">238</h2>
+              <div class="badge positive">+2,5%</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row dashboard-sections">
+      <div class="col-md-6">
+        <div class="dashboard-section">
+          <h3>Perfil de dimensões: Condições bucais</h3>
+          <div class="legend-and-button">
+            <div class="legend">
+              <div class="legend-item">
+                <span class="legend-color orange"></span>
+                <span>NÃO para todos os itens (37%)</span>
+              </div>
+              <div class="legend-item">
+                <span class="legend-color pink"></span>
+                <span>SIM de 1 a 4 itens (63%)</span>
+              </div>
+            </div>
+
+            <div class="dense-1">
+              <mat-form-field class="dimension-select" appearance="outline">
+                <mat-label>Condições Bucais</mat-label>
+                <mat-select [(ngModel)]="selectedDimension">
+                  <mat-option
+                    *ngFor="let option of dimensionOptions"
+                    [value]="option"
+                  >
+                    {{ option }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="chart-container" echarts [options]="dimensionChartOptions"></div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="dashboard-section">
+          <h3>Perfil de Fragilidade</h3>
+          <div class="legend-and-button">
+            <div class="legend">
+              <div class="legend-item">
+                <span class="legend-color dark-blue"></span>
+                <span>Saudável</span>
+              </div>
+              <div class="legend-item">
+                <span class="legend-color yellow"></span>
+                <span>Frágil</span>
+              </div>
+              <div class="legend-item">
+                <span class="legend-color green"></span>
+                <span>Não-Frágil</span>
+              </div>
+            </div>
+          </div>
+          <div class="chart-container" echarts [options]="fragilityChartOptions"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row demographics-row">
+      <div class="col-md-6">
+        <div class="dashboard-section">
+          <h3>Perfil Sociodemográfico: Raça</h3>
+          <div class="legend-and-button">
+            <div class="legend">
+              <div class="legend-item">
+                <span class="legend-color red"></span>
+                <span>Negro (30%)</span>
+              </div>
+              <div class="legend-item">
+                <span class="legend-color cyan"></span>
+                <span>Branco (58%)</span>
+              </div>
+              <div class="legend-item">
+                <span class="legend-color purple"></span>
+                <span>Pardo (12%)</span>
+              </div>
+            </div>
+
+            <div class="dense-1">
+              <mat-form-field class="dimension-select" appearance="outline">
+                <mat-label>Raça</mat-label>
+                <mat-select [(ngModel)]="selectedDemographic">
+                  <mat-option
+                    *ngFor="let option of demographicOptions"
+                    [value]="option"
+                  >
+                    {{ option }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="chart-container" echarts [options]="demographicChartOptions"></div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="dashboard-section">
+          <h3>Profissionais que mais fizeram avaliações</h3>
+          <div class="legend-and-button">
+            <div class="legend">
+              <div class="legend-item">
+                <span class="legend-color dark-purple"></span>
+                <span>Enfermeiro</span>
+              </div>
+              <div class="legend-item">
+                <span class="legend-color gold"></span>
+                <span>Médico</span>
+              </div>
+              <div class="legend-item">
+                <span class="legend-color dark-blue"></span>
+                <span>Assistente social</span>
+              </div>
+            </div>
+          </div>
+          <div class="chart-container" echarts [options]="professionalsChartOptions"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row outcomes-row">
+      <div class="col-12">
+        <div class="dashboard-section">
+          <h3>Pontuação dos desfechos</h3>
+          <div class="legend-and-button">
+            <div class="legend">
+              <div class="legend-item">
+                <span class="legend-color pink"></span>
+                <span>Humor</span>
+              </div>
+              <div class="legend-item">
+                <span class="legend-color green"></span>
+                <span>Cognição</span>
+              </div>
+              <div class="legend-item">
+                <span class="legend-color orange"></span>
+                <span>Limitação Física</span>
+              </div>
+              <div class="legend-item">
+                <span class="legend-color red"></span>
+                <span>Visão</span>
+              </div>
+              <div class="legend-item">
+                <span class="legend-color purple"></span>
+                <span>Audição</span>
+              </div>
+              <div class="legend-item">
+                <span class="legend-color yellow"></span>
+                <span>Quedas</span>
+              </div>
+            </div>
+          </div>
+          <div class="chart-container" echarts [options]="outcomesChartOptions"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

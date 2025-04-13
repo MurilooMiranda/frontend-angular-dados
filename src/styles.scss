@@ -1,0 +1,10 @@
+@use '@angular/material' as mat;
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
+
+body{
+  padding: 0px;
+}
+
+.dense-1 {
+  @include mat.all-component-densities(-8);
+}
